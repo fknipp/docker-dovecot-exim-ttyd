@@ -42,8 +42,8 @@ RUN apt-get -y update && \
     chown vmail:vmail /srv/mail && \
     make-ssl-cert generate-default-snakeoil && \
     mkdir /etc/dovecot && \
-    ln -s /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dovecot/cert.pem && \
-    ln -s /etc/ssl/private/ssl-cert-snakeoil.key /etc/dovecot/key.pem
+    cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dovecot/cert.pem && \
+    cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/dovecot/key.pem
 
 ADD dovecot.conf /etc/dovecot/dovecot.conf
 
@@ -57,7 +57,7 @@ ADD virtual /etc/postfix/virtual
 
 # Install additional tools
 
-RUN apt-get -y install netcat
+RUN apt-get -y install netcat less man nano
 
 # Install wetty for access via browser
 
@@ -74,4 +74,14 @@ EXPOSE 3000
 # Run everything
 
 COPY supervisord.conf /etc/supervisor/supervisord.conf
+
+# Run as non-root user
+
+RUN touch /supervisord.log /supervisord.pid && \
+    mkdir /var/run/dovecot && \
+    chown vmail: /supervisord.log /supervisord.pid && \
+    chown -R vmail: /var/spool/postfix /etc/dovecot /etc/postfix /var/run/dovecot /var/lib/dovecot
+
+USER vmail
+
 CMD ["/usr/bin/supervisord"]
