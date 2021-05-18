@@ -9,6 +9,12 @@ ENV LC_ALL C
 RUN apt-get -y update && \
     apt-get -y install ca-certificates supervisor
 
+# Install and configure Exim
+
+RUN apt-get -y install exim4
+
+ADD exim4.conf /etc/exim4/exim4.conf
+
 # Install Dovecot
 
 ADD dovecot.list /etc/apt/sources.list.d/dovecot.list
@@ -33,27 +39,15 @@ RUN apt-get -y update && \
         dovecot-submissiond \
         ca-certificates \
         ssl-cert && \
-    groupadd -g 1000 vmail && \
-    useradd -u 1000 -g 1000 vmail -d /srv/vmail && \
-    passwd -l vmail && \
     rm -rf /etc/dovecot && \
-    # chmod +x /sbin/tini && \
     mkdir /srv/mail && \
-    chown vmail:vmail /srv/mail && \
+    chown Debian-exim: /srv/mail && \
     make-ssl-cert generate-default-snakeoil && \
     mkdir /etc/dovecot && \
     cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dovecot/cert.pem && \
     cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/dovecot/key.pem
 
 ADD dovecot.conf /etc/dovecot/dovecot.conf
-
-# Install and configure Postfix
-
-RUN apt-get -y install postfix postfix-pcre
-
-ADD master.cf /etc/postfix/master.cf
-ADD main.cf /etc/postfix/main.cf
-ADD virtual /etc/postfix/virtual
 
 # Install additional tools
 
@@ -79,9 +73,9 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN touch /supervisord.log /supervisord.pid && \
     mkdir /var/run/dovecot && \
-    chown vmail: /supervisord.log /supervisord.pid && \
-    chown -R vmail: /var/spool/postfix /etc/dovecot /etc/postfix /var/run/dovecot /var/lib/dovecot
+    chown Debian-exim: /supervisord.log /supervisord.pid && \
+    chown -R Debian-exim: /etc/dovecot /var/run/dovecot /var/lib/dovecot /var/log/exim4
 
-USER vmail
+USER Debian-exim
 
 CMD ["/usr/bin/supervisord"]
