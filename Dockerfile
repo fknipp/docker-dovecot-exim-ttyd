@@ -53,15 +53,11 @@ ADD dovecot.conf /etc/dovecot/dovecot.conf
 
 RUN apt-get -y install netcat less man nano
 
-# Install wetty for access via browser
+# Install ttyd for access via browser
 
-ADD nodesource.list /etc/apt/sources.list.d/nodesource.list
-
-RUN apt-get -y install curl gnupg build-essential && \
-    curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    apt-get update && \
-    apt-get install nodejs && \
-    npx yarn global add wetty
+RUN apt-get -y install curl && \
+    curl -L https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.x86_64 > /usr/local/bin/ttyd && \
+    chmod a+x /usr/local/bin/ttyd
 
 EXPOSE 3000
 
