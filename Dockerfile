@@ -47,9 +47,13 @@ RUN apt-get -y update && \
 
 ADD dovecot.conf /etc/dovecot/dovecot.conf
 
-VOLUME ["/etc/dovecot", "/srv/mail"]
+# Install and configure Postfix
 
-# Install Postfix
+RUN apt-get -y install postfix postfix-pcre
+
+ADD master.cf /etc/postfix/master.cf
+ADD main.cf /etc/postfix/main.cf
+ADD virtual /etc/postfix/virtual
 
 # Install additional tools
 
