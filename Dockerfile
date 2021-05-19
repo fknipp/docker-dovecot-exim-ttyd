@@ -72,6 +72,8 @@ RUN touch /supervisord.log /supervisord.pid && \
     chown Debian-exim: /supervisord.log /supervisord.pid && \
     chown -R Debian-exim: /etc/dovecot /var/run/dovecot /var/lib/dovecot /var/log/exim4
 
-USER Debian-exim
+# This is the user Debian-exim
+
+USER 101 
 
 CMD ["/usr/bin/supervisord"]
