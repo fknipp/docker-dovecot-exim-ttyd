@@ -1,0 +1,13 @@
+Date: Wed, 19 May 2021 13:21:19 +0000
+Message-ID: <some-random-unique-content-1321@more-unique>
+From: sender@example.org
+To: Jolly Hunter <jolly@nwt.fhb>
+Subject: Greetings from /dev/null
+
+Hi Jolly,
+
+  I want to send you greetings from the nowhere of your server. I've just
+found it, and it is so black and dark here, that I really like it.
+
+Kind regards,
+Senta Sender

@@ -13,12 +13,12 @@ RUN apt-get -y update && \
 
 RUN apt-get -y install exim4
 
-ADD exim4.conf /etc/exim4/exim4.conf
+COPY exim4.conf /etc/exim4/exim4.conf
 
 # Install Dovecot
 
-ADD dovecot.list /etc/apt/sources.list.d/dovecot.list
-ADD dovecot.gpg /etc/apt/trusted.gpg.d/dovecot.gpg
+COPY dovecot.list /etc/apt/sources.list.d/dovecot.list
+COPY dovecot.gpg /etc/apt/trusted.gpg.d/dovecot.gpg
 
 RUN apt-get -y update && \
     apt-get -y install \
@@ -47,7 +47,7 @@ RUN apt-get -y update && \
     cp /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dovecot/cert.pem && \
     cp /etc/ssl/private/ssl-cert-snakeoil.key /etc/dovecot/key.pem
 
-ADD dovecot.conf /etc/dovecot/dovecot.conf
+COPY dovecot.conf /etc/dovecot/dovecot.conf
 
 # Install additional tools
 
@@ -60,6 +60,10 @@ RUN apt-get -y install curl && \
     chmod a+x /usr/local/bin/ttyd
 
 EXPOSE 3000
+
+# Copy emails to experiment with
+
+COPY emails /usr/share/
 
 # Run everything
 
