@@ -51,7 +51,7 @@ ADD dovecot.conf /etc/dovecot/dovecot.conf
 
 # Install additional tools
 
-RUN apt-get -y install netcat less man nano
+RUN apt-get -y install netcat less man nano procps net-tools
 
 # Install ttyd for access via browser
 
