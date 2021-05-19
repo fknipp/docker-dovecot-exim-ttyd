@@ -1,0 +1,51 @@
+To: jolly@nwt.fhb
+From: nice@pictures.com
+Subject: I'll send you a picture
+Message-ID: <ee6f2715-0645-2b09-01e2-b35b7926c01b@nwt-fhb>
+Date: Wed, 19 May 2021 16:19:35 +0200
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------393BDD9D87C17A59F1E94A1A"
+Content-Language: en-US
+
+This is a multi-part message in MIME format.
+--------------393BDD9D87C17A59F1E94A1A
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>This email contains a small image.</p>
+    <p>Do you see it?</p>
+    <p><br>
+    </p>
+  </body>
+</html>
+
+--------------393BDD9D87C17A59F1E94A1A
+Content-Type: image/png;
+ name="favicon.png"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="favicon.png"
+
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAC
+vUlEQVRYw+3XS0iUURQH8P99fn7N2PhsDCOiEpIiymonBCH22PQwWkktJMkgwnJhRdQ2CmqC
+aGUIkrloXERo0kKtsM1QVAhRVBCR+ULU5vHNdx+tEopiRBwMmgNndTc/zj333HuJtRZLGRRL
+HDlADpAD/NuAvudN5XeHaouXDOCnZ4lKjl1oe7z2WufAzi1iO9hiA0imUdzeu69ImTeDVqbX
+UyOHuA11mdDqnsZTPV/9GGzWAQBwp7fykKETUQuAEArts1HG3T4hizrVdPWzhgPX41kFtD2q
+2Oz5My8oNQywIATggkArCkAOcxaIuk4wevRsbNiPQS864MTdPfXCTHUU8DiCMgGXpyCYD0Is
+GAMYI0inaYpx9ym3+V1OXkXPsZbu0flsUUbAjkhL2afUh/485m0I8zTCUiHseCiRHpY7cQRE
+Eg73wKkBFxYAgTJ8RFi3lzuBzrBXPbR77+3kggB1XVdDve9e3k8qvwZGA8xCMo2g0CiWCiul
+QplMo9RJodBJIl8mkMdTkMKHFBZKMTDKXjETiroiHK1vHXjrx2DmBdgTaV7xZHqsw9N+rfV/
+21YCWGpBmIErNAqFQlj6WCkVSh0PJU4SIZlEQCbhSg9SGPiKJiSV/ZwV3HNoRd+RXd0TfwVU
+RZo3vZ8ab/9u0tuIytxTllqAWkiuEZAaJeIP1XESyHdTEFTDGnzmZPmDAqfq5i+AW0WEXjvX
+cHhkNh7xrCoj2izgXGWqjodCN47CkIciUdk6B6i5eqb4dWri8rifOgmjKTGLM+nmqiM0AkKj
+1NFY5ShsXMauV8wEzpP9Nw7yF17p/pH47BXNzDqrNJCtdyqjINR+LA8tu/ito/2eH4Pl8eCm
+usnJd41K+6NS4Uu2Lp086SaCjhjcGlpz52HTpXGc/rlyHMxai2znz4b/PUnuX5AD5AD/PeAH
+8IuaFXDeAc4AAAAASUVORK5CYII=
+--------------393BDD9D87C17A59F1E94A1A--
