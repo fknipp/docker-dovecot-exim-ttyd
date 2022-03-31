@@ -23,7 +23,6 @@ COPY dovecot.gpg /etc/apt/trusted.gpg.d/dovecot.gpg
 RUN apt-get -y update && \
     apt-get -y install \
         dovecot-core \
-        dovecot-coi \
         # dovecot-gssapi \
         dovecot-imapd \
         dovecot-ldap \
@@ -63,7 +62,7 @@ EXPOSE 3000
 
 # Copy emails to experiment with
 
-COPY emails /usr/share/
+COPY emails /usr/share/emails
 
 # Run everything
 
