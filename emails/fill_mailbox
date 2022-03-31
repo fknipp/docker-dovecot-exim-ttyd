@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -lt 1 ] ; then
+  echo Syntax: $0 mboxname
+  exit 2
+fi
+
+for i in *.txt ; do
+  echo Delivering $i to $1@nwt.fhb
+  exim -bm $1@nwt.fhb < $i
+done
