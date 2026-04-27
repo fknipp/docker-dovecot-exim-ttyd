@@ -12,3 +12,7 @@ The Docker repository is [fknipp/docker-dovecot-exim-ttyd](https://hub.docker.co
 
     docker build -t fknipp/docker-dovecot-exim-ttyd .
     docker push fknipp/docker-dovecot-exim-ttyd
+
+## Start the image (e. g. in Github Codespaces)
+
+    docker run -e PORT=8888 -p 8888:8888 fknipp/docker-dovecot-exim-ttyd
